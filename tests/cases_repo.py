@@ -85,3 +85,23 @@ def run(check):
     check("repo.contract_documented", AREA, "the report contract is documented next to the code",
           contract.is_file() and "A." in contract.read_text(encoding="utf-8"),
           f"{contract} exists: {contract.is_file()}")
+
+    # Anything that only exists from Python 3.10 was a real defect once: the installer crashed on 3.9.
+    modern = [
+        (re.compile(r"write_text\([^)\n]*,\s*newline="), "Path.write_text(newline=) needs 3.10"),
+        (re.compile(r"zip\([^)\n]*strict="), "zip(strict=) needs 3.10"),
+        (re.compile(r"^\s*match\s+\w.*:\s*$", re.M), "a match statement needs 3.10"),
+        (re.compile(r"\btomllib\b"), "tomllib needs 3.11"),
+    ]
+    sources = [path for path in sorted((ROOT / "qa_sweep").rglob("*.py")) if path.name != "cases_repo.py"]
+    sources += [path for path in sorted((ROOT / "tests").rglob("*.py")) if path.name != "cases_repo.py"]
+    sources += sorted(DATA.rglob("*.py"))
+    offenders = []
+    for path in sources:
+        text = path.read_text(encoding="utf-8")
+        for pattern, label in modern:
+            if pattern.search(text):
+                offenders.append(f"{path.name}: {label}")
+    check("repo.python39_compatible", AREA,
+          "nothing in the package, the templates or the tests needs an API newer than Python 3.9",
+          not offenders, "; ".join(offenders))

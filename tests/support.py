@@ -30,7 +30,7 @@ def temp_project():
 def write(root: Path, relative: str, text: str = "") -> Path:
     path = root / relative
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text, encoding="utf-8", newline="\n")
+    path.write_bytes(text.replace("\r\n", "\n").encode("utf-8"))
     return path
 
 
@@ -166,7 +166,7 @@ def replace_section_body(project: Path, letter: str, new_body: str, relative: st
     end = next((index for index in range(start + 1, len(lines)) if any_heading.match(lines[index])),
                len(lines))
     updated = lines[:start + 1] + ["", new_body, ""] + lines[end:]
-    path.write_text("\n".join(updated) + "\n", encoding="utf-8", newline="\n")
+    path.write_bytes(("\n".join(updated) + "\n").encode("utf-8"))
     return path
 
 

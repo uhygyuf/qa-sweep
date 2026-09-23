@@ -159,13 +159,14 @@ Every claim below was produced by a command in this repository.
 
 | Area | Command | Result |
 |---|---|---|
-| Self-tests | `python tests/run_tests.py` | 61 checks, 61 passed, 0 failed, 0 skipped |
+| Self-tests | `python tests/run_tests.py` | 62 checks, 62 passed, 0 failed, 0 skipped |
 | Detection | `python -m qa_sweep detect . --json` | prints the stack and gates of this repository |
 | Installer | `python -m qa_sweep install tests/fixtures/project --dry-run` | lists the files it would write, writes none |
 | Contract pass | `python -m qa_sweep check tests/fixtures/project/TEST_REPORT.md` | exit 0, PASS |
 | Contract fail | the same report with "release recommended" and an open P1 | exit 1, names both violations |
+| Python 3.9 | the continuous integration matrix | the suite passes on 3.9 and 3.12, Linux and Windows |
 
-Self-test checks: 61
+Self-test checks: 62
 
 The suite is `tests/run_tests.py` with four case modules. Results land in `tests/selftest-results.json`,
 which is committed so a reviewer can compare runs.
@@ -188,6 +189,10 @@ worth less.
 4. Path comparison in the installer tests failed on Windows, where a temporary directory appears as
    `LEOWAN~1` in one call and in long form in another. Found by the case module crashing, fixed by
    resolving the temporary directory once.
+5. `install` used `Path.write_text(newline="\n")`, which only exists from Python 3.10, so the tool
+   crashed for anyone on 3.9 while the local suite stayed green on 3.11. Found by the continuous
+   integration matrix on 3.9, fixed by writing bytes directly, and closed with the
+   `repo.python39_compatible` check so the class of defect cannot come back unnoticed.
 
 ## Limitations
 

@@ -12,5 +12,5 @@ First release.
 - `qa-sweep check` validates a report against the contract: required sections in order, a stated and
   allowed verdict, evidence per result row, priorities per defect row, a stated coverage limit, a cited
   results JSON, and a verdict that agrees with the failing checks inside it.
-- `qa-sweep selftest` runs the 61 check suite that tests this tool.
+- `qa-sweep selftest` runs the 62 check suite that tests this tool.
 - Continuous integration on Linux and Windows across Python 3.9 and 3.12.

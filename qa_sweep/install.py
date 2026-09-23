@@ -68,6 +68,12 @@ def render_prompt(template: str, info: dict, suite_path: str, results_path: str)
     return rendered
 
 
+def write_lf(path: Path, text: str):
+    """Write UTF-8 with LF endings. Path.write_text(newline=) only exists from Python 3.10."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(text.replace("\r\n", "\n").encode("utf-8"))
+
+
 def _write(path: Path, content: str, force: bool, dry_run: bool, report: dict):
     if path.exists() and not force:
         existing = path.read_text(encoding="utf-8", errors="replace")
@@ -77,8 +83,7 @@ def _write(path: Path, content: str, force: bool, dry_run: bool, report: dict):
             report["skipped"].append(str(path) + " (exists, use --force to replace)")
         return
     if not dry_run:
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(content, encoding="utf-8", newline="\n")
+        write_lf(path, content)
     report["written"].append(str(path))
 
 
@@ -97,8 +102,7 @@ def _append_agents_block(path: Path, block: str, dry_run: bool, report: dict):
         report["unchanged"].append(str(path))
         return
     if not dry_run:
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(updated, encoding="utf-8", newline="\n")
+        write_lf(path, updated)
     report.setdefault(action, []).append(str(path))
 
 
