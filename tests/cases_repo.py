@@ -88,8 +88,8 @@ def run(check):
 
     # Anything that only exists from Python 3.10 was a real defect once: the installer crashed on 3.9.
     modern = [
-        (re.compile(r"write_text\([^)\n]*,\s*newline="), "Path.write_text(newline=) needs 3.10"),
-        (re.compile(r"zip\([^)\n]*strict="), "zip(strict=) needs 3.10"),
+        (re.compile(r"write_text\([^\n]*,\s*newline="), "Path.write_text(newline=) needs 3.10"),
+        (re.compile(r"zip\([^\n]*strict="), "zip(strict=) needs 3.10"),
         (re.compile(r"^\s*match\s+\w.*:\s*$", re.M), "a match statement needs 3.10"),
         (re.compile(r"\btomllib\b"), "tomllib needs 3.11"),
     ]

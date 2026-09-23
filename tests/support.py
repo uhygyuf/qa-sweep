@@ -150,7 +150,7 @@ def patch_report(project: Path, old: str, new: str, relative: str = "TEST_REPORT
     text = path.read_text(encoding="utf-8")
     if old not in text:
         raise AssertionError(f"fixture report does not contain the text to replace: {old!r}")
-    path.write_text(text.replace(old, new, 1), encoding="utf-8", newline="\n")
+    path.write_bytes(text.replace(old, new, 1).encode("utf-8"))
     return path
 
 

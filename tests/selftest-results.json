@@ -1,7 +1,7 @@
 {
   "suite": "qa-sweep self-tests",
   "generated_by": "tests/run_tests.py",
-  "seconds": 1.18,
+  "seconds": 0.93,
   "python": "3.11.15",
   "platform": "win32",
   "totals": {
@@ -18,7 +18,7 @@
       "ok": true,
       "detail": "",
       "skipped": false,
-      "ms": 52.6
+      "ms": 45.0
     },
     {
       "id": "check.good_report_passes_strict",
@@ -27,7 +27,7 @@
       "ok": true,
       "detail": "warnings must be empty, a documented rollback and monitoring are required",
       "skipped": false,
-      "ms": 55.1
+      "ms": 47.0
     },
     {
       "id": "check.verdict_parsed",
@@ -36,7 +36,7 @@
       "ok": true,
       "detail": "verdict: 'conditional release'",
       "skipped": false,
-      "ms": 55.1
+      "ms": 47.0
     },
     {
       "id": "check.results_counted",
@@ -45,7 +45,7 @@
       "ok": true,
       "detail": "failures: 1",
       "skipped": false,
-      "ms": 55.1
+      "ms": 47.0
     },
     {
       "id": "check.missing_section_fails",
@@ -54,7 +54,7 @@
       "ok": true,
       "detail": "missing required section(s): D | result rows without evidence: row 7: evidence cell is 'P1'; row 8: evidence cell is 'P3' | section D has neither a defect table nor an explicit 'no defects found' statement",
       "skipped": false,
-      "ms": 70.7
+      "ms": 58.2
     },
     {
       "id": "check.hedging_fails",
@@ -63,7 +63,7 @@
       "ok": true,
       "detail": "hedged or unsupported claims: line 13: hedged claim: 'should pass'",
       "skipped": false,
-      "ms": 85.7
+      "ms": 69.9
     },
     {
       "id": "check.vague_evidence_fails",
@@ -72,7 +72,7 @@
       "ok": true,
       "detail": "result rows without evidence: row 3: evidence cell is 'n/a'",
       "skipped": false,
-      "ms": 100.8
+      "ms": 82.0
     },
     {
       "id": "check.missing_priority_fails",
@@ -81,7 +81,7 @@
       "ok": true,
       "detail": "defect rows missing a P0 to P3 priority: row 2",
       "skipped": false,
-      "ms": 120.3
+      "ms": 92.9
     },
     {
       "id": "check.release_with_p1_fails",
@@ -90,7 +90,7 @@
       "ok": true,
       "detail": "verdict is 'release recommended' while the bug list contains ['P1'] | verdict is 'release recommended' while the cited results contain 1 failing check(s)",
       "skipped": false,
-      "ms": 136.5
+      "ms": 104.4
     },
     {
       "id": "check.coverage_limits_required",
@@ -99,7 +99,7 @@
       "ok": true,
       "detail": "section B must state what was not covered",
       "skipped": false,
-      "ms": 151.5
+      "ms": 117.2
     },
     {
       "id": "check.absolute_claim_fails",
@@ -108,7 +108,7 @@
       "ok": true,
       "detail": "absolute claims: line 47: absolute claim: 'no bugs'",
       "skipped": false,
-      "ms": 164.5
+      "ms": 129.3
     },
     {
       "id": "check.broken_results_json_fails",
@@ -117,7 +117,7 @@
       "ok": true,
       "detail": "qa-results.json is not readable JSON (JSONDecodeError)",
       "skipped": false,
-      "ms": 176.4
+      "ms": 139.4
     },
     {
       "id": "check.missing_results_file_fails",
@@ -126,7 +126,7 @@
       "ok": true,
       "detail": "the report cites no readable results JSON, so its numbers cannot be checked",
       "skipped": false,
-      "ms": 187.9
+      "ms": 148.9
     },
     {
       "id": "check.empty_bug_list_fails",
@@ -135,7 +135,7 @@
       "ok": true,
       "detail": "section D has neither a defect table nor an explicit 'no defects found' statement",
       "skipped": false,
-      "ms": 202.6
+      "ms": 159.0
     },
     {
       "id": "check.negative_verdict_accepted",
@@ -144,7 +144,7 @@
       "ok": true,
       "detail": "ok=True verdict='release not recommended' ",
       "skipped": false,
-      "ms": 216.1
+      "ms": 170.4
     },
     {
       "id": "check.cli_exit_zero_on_pass",
@@ -153,7 +153,7 @@
       "ok": true,
       "detail": "exit 0: PASS",
       "skipped": false,
-      "ms": 422.5
+      "ms": 321.5
     },
     {
       "id": "check.cli_exit_one_on_fail",
@@ -162,7 +162,7 @@
       "ok": true,
       "detail": "exit 1, json parsed: True",
       "skipped": false,
-      "ms": 595.7
+      "ms": 456.8
     },
     {
       "id": "detect.node_stacks",
@@ -171,7 +171,7 @@
       "ok": true,
       "detail": "stacks: ['node']",
       "skipped": false,
-      "ms": 609.3
+      "ms": 467.9
     },
     {
       "id": "detect.node_install_uses_lockfile",
@@ -180,7 +180,7 @@
       "ok": true,
       "detail": "install: 'npm ci'",
       "skipped": false,
-      "ms": 609.3
+      "ms": 467.9
     },
     {
       "id": "detect.node_scripts",
@@ -189,7 +189,7 @@
       "ok": true,
       "detail": "build: 'npm run build', test: 'npm run test'",
       "skipped": false,
-      "ms": 609.3
+      "ms": 467.9
     },
     {
       "id": "detect.node_no_typescript_gate",
@@ -198,7 +198,7 @@
       "ok": true,
       "detail": "gates: ['build', 'dependency audit', 'install', 'lint', 'test']",
       "skipped": false,
-      "ms": 609.3
+      "ms": 467.9
     },
     {
       "id": "detect.pnpm_lockfile",
@@ -207,7 +207,7 @@
       "ok": true,
       "detail": "install: 'pnpm install --frozen-lockfile'",
       "skipped": false,
-      "ms": 626.8
+      "ms": 479.0
     },
     {
       "id": "detect.typescript_typecheck",
@@ -216,7 +216,7 @@
       "ok": true,
       "detail": "type check: 'pnpm exec tsc --noEmit'",
       "skipped": false,
-      "ms": 626.8
+      "ms": 479.0
     },
     {
       "id": "detect.no_lockfile",
@@ -225,7 +225,7 @@
       "ok": true,
       "detail": "install: 'npm install'",
       "skipped": false,
-      "ms": 637.4
+      "ms": 487.5
     },
     {
       "id": "detect.python_stack",
@@ -234,7 +234,7 @@
       "ok": true,
       "detail": "stacks: ['python']",
       "skipped": false,
-      "ms": 648.5
+      "ms": 495.4
     },
     {
       "id": "detect.python_pytest",
@@ -243,7 +243,7 @@
       "ok": true,
       "detail": "test: 'python -m pytest -q'",
       "skipped": false,
-      "ms": 648.5
+      "ms": 495.4
     },
     {
       "id": "detect.python_ruff_mypy",
@@ -252,7 +252,7 @@
       "ok": true,
       "detail": "lint: 'python -m ruff check .', type check: 'python -m mypy .'",
       "skipped": false,
-      "ms": 648.5
+      "ms": 495.4
     },
     {
       "id": "detect.python_without_pytest",
@@ -261,7 +261,7 @@
       "ok": true,
       "detail": "test: 'python -m unittest discover -s tests -v'",
       "skipped": false,
-      "ms": 658.2
+      "ms": 502.8
     },
     {
       "id": "detect.dotnet_gates",
@@ -270,7 +270,7 @@
       "ok": true,
       "detail": "gates: ['build', 'dependency audit', 'format check', 'test']",
       "skipped": false,
-      "ms": 667.2
+      "ms": 509.9
     },
     {
       "id": "detect.go_gates",
@@ -279,7 +279,7 @@
       "ok": true,
       "detail": "gates: ['build', 'dependency audit', 'test', 'vet']",
       "skipped": false,
-      "ms": 676.3
+      "ms": 516.4
     },
     {
       "id": "detect.rust_gates",
@@ -288,7 +288,7 @@
       "ok": true,
       "detail": "gates: ['build', 'format check', 'lint', 'test']",
       "skipped": false,
-      "ms": 683.3
+      "ms": 522.1
     },
     {
       "id": "detect.static_site",
@@ -297,7 +297,7 @@
       "ok": true,
       "detail": "stacks: ['static'], notes: ['static site: no build step, so the checks that matter are link targets, asset paths and the accessibility of each page.']",
       "skipped": false,
-      "ms": 691.9
+      "ms": 527.1
     },
     {
       "id": "detect.empty_project_is_honest",
@@ -306,7 +306,7 @@
       "ok": true,
       "detail": "stacks: [], gates: [], notes: ['no stack markers found: point the tool at a project root, or write the gates by hand.']",
       "skipped": false,
-      "ms": 697.9
+      "ms": 531.2
     },
     {
       "id": "detect.risks_from_tree",
@@ -315,7 +315,7 @@
       "ok": true,
       "detail": "risks: ['auth', 'database', 'file_upload', 'secrets']",
       "skipped": false,
-      "ms": 712.1
+      "ms": 540.8
     },
     {
       "id": "detect.risks_have_evidence",
@@ -324,7 +324,7 @@
       "ok": true,
       "detail": "auth: ['declared in package.json: jsonwebtoken', 'file src/auth/login.js']; file_upload: ['declared in package.json: multer', 'file src/uploads/handler.js']; database: ['file prisma/schema.prisma']; secrets: ['.env present in the tree']",
       "skipped": false,
-      "ms": 712.1
+      "ms": 540.8
     },
     {
       "id": "detect.risks_frontend_absent",
@@ -333,7 +333,7 @@
       "ok": true,
       "detail": "risks: ['auth', 'database', 'file_upload', 'secrets']",
       "skipped": false,
-      "ms": 712.1
+      "ms": 540.8
     },
     {
       "id": "detect.json_output",
@@ -342,7 +342,7 @@
       "ok": true,
       "detail": "keys: ['directory', 'file_count', 'gates', 'has_existing_tests', 'name', 'notes', 'risks', 'root', 'stacks']",
       "skipped": false,
-      "ms": 727.1
+      "ms": 551.9
     },
     {
       "id": "install.writes_expected_files",
@@ -351,7 +351,7 @@
       "ok": true,
       "detail": "written: ['.claude/commands/qa-sweep.md', '.cursor/rules/qa-sweep.mdc', '.qa-sweep/prompt.md', '.qa-sweep/quick-audit.md', '.qa-sweep/stack.json', 'AGENTS.md', 'tests/qa_lib.py', 'tests/qa_suite.py']",
       "skipped": false,
-      "ms": 749.1
+      "ms": 570.0
     },
     {
       "id": "install.prompt_has_no_placeholders",
@@ -360,7 +360,7 @@
       "ok": true,
       "detail": "found: ",
       "skipped": false,
-      "ms": 757.2
+      "ms": 577.9
     },
     {
       "id": "install.prompt_has_gate_commands",
@@ -369,7 +369,7 @@
       "ok": true,
       "detail": "expected 'npm run test' from package.json scripts.test",
       "skipped": false,
-      "ms": 757.2
+      "ms": 577.9
     },
     {
       "id": "install.prompt_names_project",
@@ -378,7 +378,7 @@
       "ok": true,
       "detail": "expected the package.json name in the project facts block",
       "skipped": false,
-      "ms": 757.2
+      "ms": 577.9
     },
     {
       "id": "install.prompt_carries_risks",
@@ -387,7 +387,7 @@
       "ok": true,
       "detail": "expected the auth risk line",
       "skipped": false,
-      "ms": 757.2
+      "ms": 577.9
     },
     {
       "id": "install.stack_json_valid",
@@ -396,7 +396,7 @@
       "ok": true,
       "detail": "stacks: ['node']",
       "skipped": false,
-      "ms": 766.8
+      "ms": 585.9
     },
     {
       "id": "install.idempotent",
@@ -405,7 +405,7 @@
       "ok": true,
       "detail": "written: [], unchanged: 3 file(s)",
       "skipped": false,
-      "ms": 805.6
+      "ms": 621.3
     },
     {
       "id": "install.agents_block_once",
@@ -414,16 +414,16 @@
       "ok": true,
       "detail": "marker count: 1",
       "skipped": false,
-      "ms": 805.6
+      "ms": 621.3
     },
     {
       "id": "install.scaffold_runs",
       "area": "installer",
       "description": "the scaffolded suite runs and exits 0",
       "ok": true,
-      "detail": "exit 0: lue is rejected with a clear message rather than a crash\r\n       not written yet: send an empty value to the primary input and assert the response\r\n\r\n6 checks: 4 passed, 0 failed, 2 skipped in 0.12s\r\nresults written to <home> wang\\AppData\\Local\\Temp\\qa-sweep-test-89p4830u\\tests\\qa-results.json",
+      "detail": "exit 0: alue is rejected with a clear message rather than a crash\r\n       not written yet: send an empty value to the primary input and assert the response\r\n\r\n6 checks: 4 passed, 0 failed, 2 skipped in 0.1s\r\nresults written to <home> wang\\AppData\\Local\\Temp\\qa-sweep-test-7pzlnt79\\tests\\qa-results.json",
       "skipped": false,
-      "ms": 1057.7
+      "ms": 841.1
     },
     {
       "id": "install.scaffold_writes_results",
@@ -432,7 +432,7 @@
       "ok": true,
       "detail": "totals: {'checks': 6, 'passed': 4, 'failed': 0, 'skipped': 2}",
       "skipped": false,
-      "ms": 1058.7
+      "ms": 841.1
     },
     {
       "id": "install.scaffold_marks_skips",
@@ -441,16 +441,16 @@
       "ok": true,
       "detail": "skipped: 2",
       "skipped": false,
-      "ms": 1058.7
+      "ms": 841.1
     },
     {
       "id": "install.preserves_existing_suite",
       "area": "installer",
       "description": "an existing suite is left byte for byte alone without --force",
       "ok": true,
-      "detail": "content: \"# the project's own suite\\n\", skipped: ['<home> wang\\\\AppData\\\\Local\\\\Temp\\\\qa-sweep-test-na8mm3gs\\\\tests\\\\qa_suite.py (exists, use --force to replace)']",
+      "detail": "content: \"# the project's own suite\\n\", skipped: ['<home> wang\\\\AppData\\\\Local\\\\Temp\\\\qa-sweep-test-wtcejixz\\\\tests\\\\qa_suite.py (exists, use --force to replace)']",
       "skipped": false,
-      "ms": 1088.3
+      "ms": 864.5
     },
     {
       "id": "install.force_replaces",
@@ -459,7 +459,7 @@
       "ok": true,
       "detail": "first line: '\"\"\"Release-readiness suite for this project.'",
       "skipped": false,
-      "ms": 1104.9
+      "ms": 876.1
     },
     {
       "id": "install.dry_run_writes_nothing",
@@ -468,7 +468,7 @@
       "ok": true,
       "detail": "files after: 4, reported: 8",
       "skipped": false,
-      "ms": 1126.0
+      "ms": 893.6
     },
     {
       "id": "install.unknown_stack_is_honest",
@@ -477,7 +477,7 @@
       "ok": true,
       "detail": "stacks: []",
       "skipped": false,
-      "ms": 1151.1
+      "ms": 912.6
     },
     {
       "id": "install.refuses_missing_target",
@@ -486,7 +486,7 @@
       "ok": true,
       "detail": "raised: FileNotFoundError",
       "skipped": false,
-      "ms": 1158.1
+      "ms": 916.6
     },
     {
       "id": "repo.data_files_present",
@@ -495,7 +495,7 @@
       "ok": true,
       "detail": "4 file(s) under qa_sweep/data",
       "skipped": false,
-      "ms": 1159.1
+      "ms": 917.6
     },
     {
       "id": "repo.no_personal_data",
@@ -504,7 +504,7 @@
       "ok": true,
       "detail": "",
       "skipped": false,
-      "ms": 1168.1
+      "ms": 927.8
     },
     {
       "id": "repo.placeholders_allowlisted",
@@ -513,7 +513,7 @@
       "ok": true,
       "detail": "",
       "skipped": false,
-      "ms": 1169.1
+      "ms": 927.8
     },
     {
       "id": "repo.declared_files_exist",
@@ -522,7 +522,7 @@
       "ok": true,
       "detail": "missing: []",
       "skipped": false,
-      "ms": 1169.1
+      "ms": 927.8
     },
     {
       "id": "repo.templates_compile",
@@ -531,7 +531,7 @@
       "ok": true,
       "detail": "",
       "skipped": false,
-      "ms": 1172.1
+      "ms": 929.8
     },
     {
       "id": "repo.readme_check_count_current",
@@ -540,7 +540,7 @@
       "ok": true,
       "detail": "README quotes 62, the suite declares 62 checks",
       "skipped": false,
-      "ms": 1173.1
+      "ms": 930.8
     },
     {
       "id": "repo.readme_sections",
@@ -549,7 +549,7 @@
       "ok": true,
       "detail": "missing: []",
       "skipped": false,
-      "ms": 1173.1
+      "ms": 930.8
     },
     {
       "id": "repo.contract_documented",
@@ -558,7 +558,7 @@
       "ok": true,
       "detail": "<path> exists: True",
       "skipped": false,
-      "ms": 1173.1
+      "ms": 930.8
     },
     {
       "id": "repo.python39_compatible",
@@ -567,7 +567,7 @@
       "ok": true,
       "detail": "",
       "skipped": false,
-      "ms": 1178.3
+      "ms": 934.8
     }
   ]
 }
