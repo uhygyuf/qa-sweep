@@ -1,0 +1,564 @@
+{
+  "suite": "qa-sweep self-tests",
+  "generated_by": "tests/run_tests.py",
+  "seconds": 0.95,
+  "python": "3.11.15",
+  "platform": "win32",
+  "totals": {
+    "checks": 61,
+    "passed": 61,
+    "failed": 0,
+    "skipped": 0
+  },
+  "results": [
+    {
+      "id": "check.good_report_passes",
+      "area": "report contract",
+      "description": "a complete report passes the contract",
+      "ok": true,
+      "detail": "",
+      "skipped": false,
+      "ms": 40.2
+    },
+    {
+      "id": "check.good_report_passes_strict",
+      "area": "report contract",
+      "description": "the same report passes with --strict",
+      "ok": true,
+      "detail": "warnings must be empty, a documented rollback and monitoring are required",
+      "skipped": false,
+      "ms": 43.0
+    },
+    {
+      "id": "check.verdict_parsed",
+      "area": "report contract",
+      "description": "the verdict is read from section A",
+      "ok": true,
+      "detail": "verdict: 'conditional release'",
+      "skipped": false,
+      "ms": 43.0
+    },
+    {
+      "id": "check.results_counted",
+      "area": "report contract",
+      "description": "failures are counted from the cited results file",
+      "ok": true,
+      "detail": "failures: 1",
+      "skipped": false,
+      "ms": 43.0
+    },
+    {
+      "id": "check.missing_section_fails",
+      "area": "report contract",
+      "description": "a missing section D is a violation",
+      "ok": true,
+      "detail": "missing required section(s): D | result rows without evidence: row 7: evidence cell is 'P1'; row 8: evidence cell is 'P3' | section D has neither a defect table nor an explicit 'no defects found' statement",
+      "skipped": false,
+      "ms": 54.1
+    },
+    {
+      "id": "check.hedging_fails",
+      "area": "report contract",
+      "description": "a hedged claim is rejected with its line number",
+      "ok": true,
+      "detail": "hedged or unsupported claims: line 13: hedged claim: 'should pass'",
+      "skipped": false,
+      "ms": 66.1
+    },
+    {
+      "id": "check.vague_evidence_fails",
+      "area": "report contract",
+      "description": "a result row without evidence is a violation",
+      "ok": true,
+      "detail": "result rows without evidence: row 3: evidence cell is 'n/a'",
+      "skipped": false,
+      "ms": 77.1
+    },
+    {
+      "id": "check.missing_priority_fails",
+      "area": "report contract",
+      "description": "a defect row without a P0 to P3 priority is a violation",
+      "ok": true,
+      "detail": "defect rows missing a P0 to P3 priority: row 2",
+      "skipped": false,
+      "ms": 88.1
+    },
+    {
+      "id": "check.release_with_p1_fails",
+      "area": "report contract",
+      "description": "a release verdict next to an open P1 or a failing check is a violation",
+      "ok": true,
+      "detail": "verdict is 'release recommended' while the bug list contains ['P1'] | verdict is 'release recommended' while the cited results contain 1 failing check(s)",
+      "skipped": false,
+      "ms": 99.4
+    },
+    {
+      "id": "check.coverage_limits_required",
+      "area": "report contract",
+      "description": "a report that does not say what was not covered is a violation",
+      "ok": true,
+      "detail": "section B must state what was not covered",
+      "skipped": false,
+      "ms": 112.0
+    },
+    {
+      "id": "check.absolute_claim_fails",
+      "area": "report contract",
+      "description": "an absolute claim such as 'no bugs' is a violation",
+      "ok": true,
+      "detail": "absolute claims: line 47: absolute claim: 'no bugs'",
+      "skipped": false,
+      "ms": 123.0
+    },
+    {
+      "id": "check.broken_results_json_fails",
+      "area": "report contract",
+      "description": "an unreadable results file is a violation",
+      "ok": true,
+      "detail": "qa-results.json is not readable JSON (JSONDecodeError)",
+      "skipped": false,
+      "ms": 131.6
+    },
+    {
+      "id": "check.missing_results_file_fails",
+      "area": "report contract",
+      "description": "citing a results file that does not exist is a violation",
+      "ok": true,
+      "detail": "the report cites no readable results JSON, so its numbers cannot be checked",
+      "skipped": false,
+      "ms": 142.2
+    },
+    {
+      "id": "check.empty_bug_list_fails",
+      "area": "report contract",
+      "description": "a bug list with neither rows nor a 'no defects found' statement is a violation",
+      "ok": true,
+      "detail": "section D has neither a defect table nor an explicit 'no defects found' statement",
+      "skipped": false,
+      "ms": 153.2
+    },
+    {
+      "id": "check.negative_verdict_accepted",
+      "area": "report contract",
+      "description": "a 'release not recommended' verdict is a valid answer, not a violation",
+      "ok": true,
+      "detail": "ok=True verdict='release not recommended' ",
+      "skipped": false,
+      "ms": 164.2
+    },
+    {
+      "id": "check.cli_exit_zero_on_pass",
+      "area": "report contract",
+      "description": "the command line exits 0 for a report that passes",
+      "ok": true,
+      "detail": "exit 0: PASS",
+      "skipped": false,
+      "ms": 311.0
+    },
+    {
+      "id": "check.cli_exit_one_on_fail",
+      "area": "report contract",
+      "description": "the command line exits 1 and prints JSON when the contract fails",
+      "ok": true,
+      "detail": "exit 1, json parsed: True",
+      "skipped": false,
+      "ms": 455.1
+    },
+    {
+      "id": "detect.node_stacks",
+      "area": "detection",
+      "description": "a node project is reported as a node project",
+      "ok": true,
+      "detail": "stacks: ['node']",
+      "skipped": false,
+      "ms": 465.1
+    },
+    {
+      "id": "detect.node_install_uses_lockfile",
+      "area": "detection",
+      "description": "a lockfile selects npm ci",
+      "ok": true,
+      "detail": "install: 'npm ci'",
+      "skipped": false,
+      "ms": 465.1
+    },
+    {
+      "id": "detect.node_scripts",
+      "area": "detection",
+      "description": "package.json scripts become the build and test gates",
+      "ok": true,
+      "detail": "build: 'npm run build', test: 'npm run test'",
+      "skipped": false,
+      "ms": 465.1
+    },
+    {
+      "id": "detect.node_no_typescript_gate",
+      "area": "detection",
+      "description": "no tsconfig means no type check gate",
+      "ok": true,
+      "detail": "gates: ['build', 'dependency audit', 'install', 'lint', 'test']",
+      "skipped": false,
+      "ms": 465.1
+    },
+    {
+      "id": "detect.pnpm_lockfile",
+      "area": "detection",
+      "description": "a pnpm lockfile selects pnpm with a frozen install",
+      "ok": true,
+      "detail": "install: 'pnpm install --frozen-lockfile'",
+      "skipped": false,
+      "ms": 477.6
+    },
+    {
+      "id": "detect.typescript_typecheck",
+      "area": "detection",
+      "description": "tsconfig.json adds a type check gate",
+      "ok": true,
+      "detail": "type check: 'pnpm exec tsc --noEmit'",
+      "skipped": false,
+      "ms": 477.6
+    },
+    {
+      "id": "detect.no_lockfile",
+      "area": "detection",
+      "description": "a project without a lockfile gets npm install",
+      "ok": true,
+      "detail": "install: 'npm install'",
+      "skipped": false,
+      "ms": 486.3
+    },
+    {
+      "id": "detect.python_stack",
+      "area": "detection",
+      "description": "a pyproject project is reported as python",
+      "ok": true,
+      "detail": "stacks: ['python']",
+      "skipped": false,
+      "ms": 494.4
+    },
+    {
+      "id": "detect.python_pytest",
+      "area": "detection",
+      "description": "pytest is the test gate when it is configured",
+      "ok": true,
+      "detail": "test: 'python -m pytest -q'",
+      "skipped": false,
+      "ms": 494.4
+    },
+    {
+      "id": "detect.python_ruff_mypy",
+      "area": "detection",
+      "description": "declared ruff and mypy become lint and type check gates",
+      "ok": true,
+      "detail": "lint: 'python -m ruff check .', type check: 'python -m mypy .'",
+      "skipped": false,
+      "ms": 494.4
+    },
+    {
+      "id": "detect.python_without_pytest",
+      "area": "detection",
+      "description": "a python project with tests but no pytest falls back to unittest discovery",
+      "ok": true,
+      "detail": "test: 'python -m unittest discover -s tests -v'",
+      "skipped": false,
+      "ms": 502.4
+    },
+    {
+      "id": "detect.dotnet_gates",
+      "area": "detection",
+      "description": "a solution file yields the dotnet gates",
+      "ok": true,
+      "detail": "gates: ['build', 'dependency audit', 'format check', 'test']",
+      "skipped": false,
+      "ms": 509.5
+    },
+    {
+      "id": "detect.go_gates",
+      "area": "detection",
+      "description": "go.mod yields build, vet and test gates",
+      "ok": true,
+      "detail": "gates: ['build', 'dependency audit', 'test', 'vet']",
+      "skipped": false,
+      "ms": 516.5
+    },
+    {
+      "id": "detect.rust_gates",
+      "area": "detection",
+      "description": "Cargo.toml yields build, test and fmt gates",
+      "ok": true,
+      "detail": "gates: ['build', 'format check', 'lint', 'test']",
+      "skipped": false,
+      "ms": 523.0
+    },
+    {
+      "id": "detect.static_site",
+      "area": "detection",
+      "description": "an html only project is reported as a static site with a note",
+      "ok": true,
+      "detail": "stacks: ['static'], notes: ['static site: no build step, so the checks that matter are link targets, asset paths and the accessibility of each page.']",
+      "skipped": false,
+      "ms": 528.5
+    },
+    {
+      "id": "detect.empty_project_is_honest",
+      "area": "detection",
+      "description": "an unrecognised directory reports no stack instead of inventing gates",
+      "ok": true,
+      "detail": "stacks: [], gates: [], notes: ['no stack markers found: point the tool at a project root, or write the gates by hand.']",
+      "skipped": false,
+      "ms": 532.0
+    },
+    {
+      "id": "detect.risks_from_tree",
+      "area": "detection",
+      "description": "auth, database, upload and secret risks are found in the tree",
+      "ok": true,
+      "detail": "risks: ['auth', 'database', 'file_upload', 'secrets']",
+      "skipped": false,
+      "ms": 543.0
+    },
+    {
+      "id": "detect.risks_have_evidence",
+      "area": "detection",
+      "description": "every risk carries the file that produced it",
+      "ok": true,
+      "detail": "auth: ['declared in package.json: jsonwebtoken', 'file src/auth/login.js']; file_upload: ['declared in package.json: multer', 'file src/uploads/handler.js']; database: ['file prisma/schema.prisma']; secrets: ['.env present in the tree']",
+      "skipped": false,
+      "ms": 543.0
+    },
+    {
+      "id": "detect.risks_frontend_absent",
+      "area": "detection",
+      "description": "a backend only project reports no frontend risk",
+      "ok": true,
+      "detail": "risks: ['auth', 'database', 'file_upload', 'secrets']",
+      "skipped": false,
+      "ms": 543.0
+    },
+    {
+      "id": "detect.json_output",
+      "area": "detection",
+      "description": "the JSON output parses and carries the same stacks",
+      "ok": true,
+      "detail": "keys: ['directory', 'file_count', 'gates', 'has_existing_tests', 'name', 'notes', 'risks', 'root', 'stacks']",
+      "skipped": false,
+      "ms": 555.0
+    },
+    {
+      "id": "install.writes_expected_files",
+      "area": "installer",
+      "description": "every adapter and scaffold file is written",
+      "ok": true,
+      "detail": "written: ['.claude/commands/qa-sweep.md', '.cursor/rules/qa-sweep.mdc', '.qa-sweep/prompt.md', '.qa-sweep/quick-audit.md', '.qa-sweep/stack.json', 'AGENTS.md', 'tests/qa_lib.py', 'tests/qa_suite.py']",
+      "skipped": false,
+      "ms": 572.7
+    },
+    {
+      "id": "install.prompt_has_no_placeholders",
+      "area": "installer",
+      "description": "no template placeholder survives rendering",
+      "ok": true,
+      "detail": "found: ",
+      "skipped": false,
+      "ms": 580.7
+    },
+    {
+      "id": "install.prompt_has_gate_commands",
+      "area": "installer",
+      "description": "the detected test command is quoted in the prompt",
+      "ok": true,
+      "detail": "expected 'npm run test' from package.json scripts.test",
+      "skipped": false,
+      "ms": 580.7
+    },
+    {
+      "id": "install.prompt_names_project",
+      "area": "installer",
+      "description": "the prompt names the project it was written for",
+      "ok": true,
+      "detail": "expected the package.json name in the project facts block",
+      "skipped": false,
+      "ms": 580.7
+    },
+    {
+      "id": "install.prompt_carries_risks",
+      "area": "installer",
+      "description": "the prompt carries the risky modules with evidence",
+      "ok": true,
+      "detail": "expected the auth risk line",
+      "skipped": false,
+      "ms": 580.7
+    },
+    {
+      "id": "install.stack_json_valid",
+      "area": "installer",
+      "description": "the detection result is stored next to the prompt",
+      "ok": true,
+      "detail": "stacks: ['node']",
+      "skipped": false,
+      "ms": 589.2
+    },
+    {
+      "id": "install.idempotent",
+      "area": "installer",
+      "description": "a second install writes nothing new and changes nothing",
+      "ok": true,
+      "detail": "written: [], unchanged: 3 file(s)",
+      "skipped": false,
+      "ms": 623.4
+    },
+    {
+      "id": "install.agents_block_once",
+      "area": "installer",
+      "description": "the AGENTS.md block is not duplicated by a second install",
+      "ok": true,
+      "detail": "marker count: 1",
+      "skipped": false,
+      "ms": 624.4
+    },
+    {
+      "id": "install.scaffold_runs",
+      "area": "installer",
+      "description": "the scaffolded suite runs and exits 0",
+      "ok": true,
+      "detail": "exit 0: lue is rejected with a clear message rather than a crash\r\n       not written yet: send an empty value to the primary input and assert the response\r\n\r\n6 checks: 4 passed, 0 failed, 2 skipped in 0.11s\r\nresults written to <home> wang\\AppData\\Local\\Temp\\qa-sweep-test-u_dev0b4\\tests\\qa-results.json",
+      "skipped": false,
+      "ms": 857.1
+    },
+    {
+      "id": "install.scaffold_writes_results",
+      "area": "installer",
+      "description": "the scaffolded suite writes its results file",
+      "ok": true,
+      "detail": "totals: {'checks': 6, 'passed': 4, 'failed': 0, 'skipped': 2}",
+      "skipped": false,
+      "ms": 857.1
+    },
+    {
+      "id": "install.scaffold_marks_skips",
+      "area": "installer",
+      "description": "placeholders are recorded as skipped, never as passing checks",
+      "ok": true,
+      "detail": "skipped: 2",
+      "skipped": false,
+      "ms": 857.1
+    },
+    {
+      "id": "install.preserves_existing_suite",
+      "area": "installer",
+      "description": "an existing suite is left byte for byte alone without --force",
+      "ok": true,
+      "detail": "content: \"# the project's own suite\\n\", skipped: ['<home> wang\\\\AppData\\\\Local\\\\Temp\\\\qa-sweep-test-ikcin55k\\\\tests\\\\qa_suite.py (exists, use --force to replace)']",
+      "skipped": false,
+      "ms": 879.1
+    },
+    {
+      "id": "install.force_replaces",
+      "area": "installer",
+      "description": "--force replaces the file it would otherwise keep",
+      "ok": true,
+      "detail": "first line: '\"\"\"Release-readiness suite for this project.'",
+      "skipped": false,
+      "ms": 894.0
+    },
+    {
+      "id": "install.dry_run_writes_nothing",
+      "area": "installer",
+      "description": "--dry-run reports work but touches no file",
+      "ok": true,
+      "detail": "files after: 4, reported: 8",
+      "skipped": false,
+      "ms": 911.1
+    },
+    {
+      "id": "install.unknown_stack_is_honest",
+      "area": "installer",
+      "description": "an unrecognised project still gets a prompt that says no gate was detected",
+      "ok": true,
+      "detail": "stacks: []",
+      "skipped": false,
+      "ms": 929.4
+    },
+    {
+      "id": "install.refuses_missing_target",
+      "area": "installer",
+      "description": "a target that does not exist is refused",
+      "ok": true,
+      "detail": "raised: FileNotFoundError",
+      "skipped": false,
+      "ms": 934.4
+    },
+    {
+      "id": "repo.data_files_present",
+      "area": "repository",
+      "description": "the prompt pack and templates ship with the package",
+      "ok": true,
+      "detail": "4 file(s) under qa_sweep/data",
+      "skipped": false,
+      "ms": 935.4
+    },
+    {
+      "id": "repo.no_personal_data",
+      "area": "repository",
+      "description": "no email address or home path in the shipped prompts or the committed results",
+      "ok": true,
+      "detail": "",
+      "skipped": false,
+      "ms": 945.0
+    },
+    {
+      "id": "repo.placeholders_allowlisted",
+      "area": "repository",
+      "description": "every placeholder in the prompt pack is one the installer knows how to fill",
+      "ok": true,
+      "detail": "",
+      "skipped": false,
+      "ms": 946.0
+    },
+    {
+      "id": "repo.declared_files_exist",
+      "area": "repository",
+      "description": "every file the installer reads exists on disk",
+      "ok": true,
+      "detail": "missing: []",
+      "skipped": false,
+      "ms": 946.0
+    },
+    {
+      "id": "repo.templates_compile",
+      "area": "repository",
+      "description": "the shipped python templates are valid source",
+      "ok": true,
+      "detail": "",
+      "skipped": false,
+      "ms": 949.0
+    },
+    {
+      "id": "repo.readme_check_count_current",
+      "area": "repository",
+      "description": "the number of self-tests quoted in the README equals the number the suite runs",
+      "ok": true,
+      "detail": "README quotes 61, the suite declares 61 checks",
+      "skipped": false,
+      "ms": 950.1
+    },
+    {
+      "id": "repo.readme_sections",
+      "area": "repository",
+      "description": "the README keeps the sections a reader needs",
+      "ok": true,
+      "detail": "missing: []",
+      "skipped": false,
+      "ms": 950.1
+    },
+    {
+      "id": "repo.contract_documented",
+      "area": "repository",
+      "description": "the report contract is documented next to the code",
+      "ok": true,
+      "detail": "<path> exists: True",
+      "skipped": false,
+      "ms": 950.1
+    }
+  ]
+}

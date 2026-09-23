@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qa-sweep"
+version = "1.0.0"
+description = "Install a release-readiness QA sweep prompt for a coding agent, and check the report that comes back against an evidence contract."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Wang Han" }]
+keywords = ["qa", "release", "testing", "code-review", "coding-agents", "prompt"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/uhygyuf/qa-sweep"
+Issues = "https://github.com/uhygyuf/qa-sweep/issues"
+
+[project.scripts]
+qa-sweep = "qa_sweep.cli:main"
+
+[tool.setuptools]
+packages = ["qa_sweep"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+qa_sweep = ["data/prompts/*.md", "data/templates/*.py"]

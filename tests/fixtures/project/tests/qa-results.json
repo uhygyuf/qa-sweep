@@ -1,0 +1,25 @@
+{
+  "suite": "release-readiness",
+  "generated_by": "tests/qa_lib.py",
+  "seconds": 12.4,
+  "totals": {
+    "checks": 12,
+    "passed": 11,
+    "failed": 1,
+    "skipped": 0
+  },
+  "results": [
+    {"id": "authz.owner", "area": "authorization", "description": "a user cannot read another user's document", "ok": false, "detail": "GET /documents/42 as user 7 returned 200"},
+    {"id": "authz.logged_out", "area": "authorization", "description": "an anonymous request is rejected", "ok": true, "detail": "401"},
+    {"id": "journey.share", "area": "critical journey", "description": "create, share and open a document", "ok": true, "detail": "3 requests, all 2xx"},
+    {"id": "boundary.empty_title", "area": "boundaries", "description": "an empty title is rejected", "ok": true, "detail": "400 with a field message"},
+    {"id": "boundary.long_title", "area": "boundaries", "description": "a 200 KB title is rejected", "ok": true, "detail": "413"},
+    {"id": "api.pagination", "area": "api", "description": "listing honors the page size", "ok": true, "detail": "25 of 60 documents"},
+    {"id": "api.idempotency", "area": "api", "description": "a repeated create with the same key makes one document", "ok": true, "detail": "1 row after two posts"},
+    {"id": "error.no_stack_trace", "area": "error paths", "description": "a server error leaks no stack trace", "ok": true, "detail": "body is a generic message"},
+    {"id": "secrets.none_committed", "area": "secrets", "description": "no credential file is committed", "ok": true, "detail": "no .env, no key file"},
+    {"id": "security.headers", "area": "security", "description": "the response sets a content type policy", "ok": true, "detail": "nosniff present"},
+    {"id": "perf.list_latency", "area": "performance", "description": "listing 60 documents under 300 ms", "ok": true, "detail": "median 118 ms over 10 runs"},
+    {"id": "docs.readme_steps", "area": "documentation", "description": "the README steps bring a fresh clone to a running server", "ok": true, "detail": "followed on a clean checkout"}
+  ]
+}

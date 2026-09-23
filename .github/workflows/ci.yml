@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  selftest:
+    name: selftest (${{ matrix.os }}, python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: compile every module and template
+        run: python -m compileall -q qa_sweep tests
+
+      - name: run the self-tests
+        run: python tests/run_tests.py
+
+      - name: install the package and smoke the console script
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install .
+          qa-sweep version
+          qa-sweep detect --json .
+          qa-sweep check tests/fixtures/project/TEST_REPORT.md
+
+      - name: upload the results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selftest-results-${{ matrix.os }}-py${{ matrix.python }}
+          path: tests/selftest-results.json
+          if-no-files-found: warn
